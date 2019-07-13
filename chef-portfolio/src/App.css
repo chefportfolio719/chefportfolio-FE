@@ -1,8 +1,58 @@
-img {
-  width: 100%;
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.recipe-card {
-  width: 300px;
-  border: 1px solid red;
+html {
+  font-size: 62.5%
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.home-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipe-card-wrapper {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards {
+  width: 30%;
+  height: 500px;
+  border: 1px solid lightgrey;
+}
+
+.cards img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.card-info {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.username {
+  font-size: 1.2rem;
+  color: darkorange;
+}
+
+.title {
+  font-size: 1.6rem;
+}
+
+.description {
+  font-size: 1.5rem;
 }
