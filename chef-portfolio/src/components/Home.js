@@ -1,9 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-
+import { getAllRecipes } from '../actions';
 
 class Home extends React.Component {
+
+  componentDidMount() {
+    this.props.getAllRecipes();
+  }
+
   render() {
     return (
       <div className='home-wrapper'>
@@ -15,8 +19,8 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    // State
+    recipes: state.recipes
   }
 }
 
-export default connect(mapStateToProps, {})(Home);
+export default connect(mapStateToProps, { getAllRecipes })(Home);
