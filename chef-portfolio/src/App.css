@@ -13,13 +13,58 @@ img {
   height: auto;
 }
 
-.home-wrapper {
-  max-width: 1200px;
+.container {
+  width: 1200px;
   margin: 0 auto;
 }
 
+.main-nav {
+  padding: 10px 0;
+  color: white;
+  background: #0C0034;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-nav h1 {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.main-nav-button {
+  padding: 10px 40px;
+  border-radius: 5px;
+  margin-left: 15px;
+  border: none;
+  background: #FF7600;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.main-nav-button:nth-of-type(2) {
+  background: none;
+  border: 1px solid white;
+}
+
+.filter-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  padding: 15px;
+  font-size: 1.4rem;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+
 .recipe-card-wrapper {
-  margin-top: 100px;
   display: flex;
   justify-content: space-between;
 }

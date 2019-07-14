@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getAllRecipes } from '../actions';
 
 import RecipeCard from './RecipeCard';
+import Filter from './Filter';
 
 class Home extends React.Component {
 
@@ -12,8 +13,8 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className='home-wrapper'>
-        <h1>Chef Portfolio</h1>
+      <div className='home-wrapper container'>
+        <Filter />
         <div className='recipe-card-wrapper'>
           {this.props.recipes.map(recipe => (
           <RecipeCard key={recipe.id} {...recipe}/>
