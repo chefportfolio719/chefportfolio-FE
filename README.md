@@ -1,4 +1,4 @@
-# chefportfolio-BE-Jasmine
+# chefportfolio-FE
 
 BuildWeek 7/19
 
