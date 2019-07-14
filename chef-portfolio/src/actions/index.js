@@ -6,9 +6,9 @@ export const GET_ALL_RECIPES_FAILURE = 'GET_ALL_RECIPES_FAILURE';
 
 export const getAllRecipes = () => dispatch => {
   dispatch({ type: GET_ALL_RECIPES_START });
-  axios.get('http://localhost:5000/recipes')
+  axios.get('https://chefportfoliopt4.herokuapp.com/recipes')
     .then(res => {
-      console.log(res.data);
+      console.log(res);
       dispatch({ type: GET_ALL_RECIPES_SUCCESS, payload: res.data });
     })
     .catch(err => {
