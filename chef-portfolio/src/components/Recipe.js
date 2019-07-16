@@ -10,14 +10,28 @@ class Recipe extends React.Component {
   
   render() {
     const id = this.props.match.params.id;
-    console.log(typeof id, id);
     const recipe = this.props.recipes.find(recipe => recipe._id === id);
-    console.log('this is the found object ', recipe);
-    return (
-      <div className='recipe-wrapper'>
-        <h2>{recipe.name}</h2>
+    console.log(recipe);
+
+    if(this.props.recipes.length) {
+      return (
+      <div className='recipe-wrapper container'>
+        <h1>{recipe.name}</h1>
+        <img src={recipe.picture} alt={recipe.description}/>
+        <div className='ingredients'>
+          <p>Ingredients:</p>
+          <p>{recipe.ingredients}</p>
+        </div>
+        <div className='instructions'>
+          <p>Instructions:</p>
+          <p>{recipe.instructions}</p>
+        </div>
       </div>
-    );
+      );
+
+    } else {
+      return <div>Loading</div>
+    }
   }
 }
 
