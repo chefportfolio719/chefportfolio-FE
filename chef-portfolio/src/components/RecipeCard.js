@@ -3,12 +3,12 @@ import React from 'react';
 const Recipe = props => {
   return(
     <div className='cards'>
-      <img src={props.pic} alt={props.recipe_name} />
+      <img src={props.picture} alt={props.name} />
 
       <div className='card-info'>
-        <p className='username'>Chef Number {props.id}</p>
-        <h2 className='title'>{props.recipe_name}</h2>
-        <p className='description'>Soft, tender eggplant generously coated with an umami-packed miso glaze. A healthy, delicious side dish ready in under 20 minutes!</p>
+        <p className='username'>{props.chef.name}</p>
+        <h2 className='title'>{props.name}</h2>
+        <p className='description'>{props.description}</p>
       </div>
     </div>
   );

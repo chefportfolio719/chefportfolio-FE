@@ -66,13 +66,15 @@ img {
 
 .recipe-card-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .cards {
-  width: 30%;
-  height: 500px;
+  width: 22.5%;
+  height: 400px;
   border: 1px solid lightgrey;
+  margin-bottom: 40px;
 }
 
 .cards img {

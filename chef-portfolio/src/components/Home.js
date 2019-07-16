@@ -17,7 +17,7 @@ class Home extends React.Component {
         <Filter />
         <div className='recipe-card-wrapper'>
           {this.props.recipes.map(recipe => (
-          <RecipeCard key={recipe.id} {...recipe}/>
+            <RecipeCard key={recipe._id} {...recipe}/>
           ))}
         </div>
       </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const MainNav = props => {
   return (
     <nav className='main-nav'>
-      <div class='container main-nav'>
+      <div className='container main-nav'>
         <Link to='/'>
           <h1>Chef Portfolio</h1>
         </Link>
