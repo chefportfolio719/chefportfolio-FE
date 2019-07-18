@@ -13,9 +13,13 @@ img {
   height: auto;
 }
 
-.container {
+/* .container {
   width: 1200px;
   margin: 0 auto;
+} */
+
+.bg-orange {
+  background: #ff7600 !important;
 }
 
 .bg-dark {
@@ -127,7 +131,7 @@ img {
 
 .form-signin {
   width: 100%;
-  max-width: 400px;
+  max-width: 900px;
   padding: 15px;
   margin: 30px auto;
 }
@@ -153,4 +157,17 @@ img {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.round-btn {
+  border-radius: 100%;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #ff7600;
+  color: white;
+}
+p card-text {
+  font-size: 28px;
 }

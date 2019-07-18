@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import '../App.css';
-import brand from '../assets/ChefPortfolioBrand.png';
+import '../../App.css';
 
-class Login extends Component {
+class ChefCreatePost extends Component {
   state = {
-    email: '',
-    password: ''
+    recipeTitle: '',
+    mealType: '',
+    ingredients: '',
+    instructions: ''
   };
 
   // Handle Change
@@ -28,52 +29,68 @@ class Login extends Component {
           onSubmit={this.handleSubmit}
           className="form-signin py-5 bg-dark text-white text-center rounded-lg"
         >
-          <img
+          {/* <img
             className="brand"
             style={{ width: '100px' }}
             src={brand}
             alt="chef portfolio brand logo"
-          />
+          /> */}
           <h1 className="h3 my-5 font-weight-normal">
-            Welcome back! Please sign in.
+            Add your recipe
           </h1>
-          <label htmlFor="inputEmail" className="sr-only">
-            Email address
+          <label htmlFor="recipeTitle" className="sr-only">
+            Recipe Title
           </label>
           <input
-            type="email"
-            id="inputEmail"
+            type="text"
+            id="recipeTitle"
             className="form-control"
-            placeholder="Email"
+            placeholder="Recipe Title"
             required
             autoFocus
             onChange={this.handleChange}
           />
-          <label
-            htmlFor="inputPassword"
-            className="sr-only"
-          >
-            Password
+
+          <label htmlFor="mealType" className="sr-only">
+            Meal Type
           </label>
-          <input
-            type="password"
-            id="inputPassword"
+          <textarea
             className="form-control"
-            placeholder="Password"
-            required
+            id="mealType"
+            placeholder="Meal Type"
             onChange={this.handleChange}
           />
-          <div className="checkbox mb-3">
+
+          <label htmlFor="ingredients" className="sr-only">
+            Ingredients
+          </label>
+          <textarea
+            className="form-control"
+            id="ingredients"
+            placeholder="Ingredients"
+            onChange={this.handleChange}
+          />
+
+          <label htmlFor="instructions" className="sr-only">
+            Instructions
+          </label>
+          <textarea
+            className="form-control"
+            id="instructions"
+            placeholder="Instructions"
+            onChange={this.handleChange}
+          />
+          {/* <div className="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me" />
               &nbsp; Remember me
             </label>
-          </div>
+          </div> */}
           <button
             className="btn btn-lg py-4 mt-4 border border-white text-white btn-block"
             type="submit"
           >
-            Sign in
+            Add it!
           </button>
         </form>
       </div>
@@ -81,4 +98,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default ChefCreatePost;
