@@ -8,6 +8,7 @@ export const getAllRecipes = () => dispatch => {
   dispatch({ type: GET_ALL_RECIPES_START });
   axios.get('https://chefportfoliopt4.herokuapp.com/')
     .then(res => {
+      // Check Routes
       console.log(res);
       dispatch({ type: GET_ALL_RECIPES_SUCCESS, payload: res.data });
     })
