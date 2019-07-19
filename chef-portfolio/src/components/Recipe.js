@@ -11,7 +11,6 @@ class Recipe extends React.Component {
   render() {
     const id = this.props.match.params.id;
     const recipe = this.props.recipes.find(recipe => recipe._id === id);
-    console.log(recipe);
 
     if(this.props.recipes.length) {
       return (
@@ -28,9 +27,8 @@ class Recipe extends React.Component {
         </div>
       </div>
       );
-
     } else {
-      return <div>Loading</div>
+      return null;
     }
   }
 }
@@ -39,7 +37,7 @@ class Recipe extends React.Component {
 const mapStateToProps = state => {
   return {
     recipes: state.recipes
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, { getAllRecipes })(Recipe);

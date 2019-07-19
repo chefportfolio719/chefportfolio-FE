@@ -9,8 +9,7 @@ class Home extends React.Component {
 
   state = {
     selected: 'All'
-
-  }
+  };
 
   componentDidMount() {
     this.props.getAllRecipes();
@@ -19,7 +18,6 @@ class Home extends React.Component {
   selectFoodType = (event) => {
     const selectedTab = event.target.innerHTML;
     this.setState({ selected: selectedTab });
-    console.log(this.state.selected);
   }
 
   render() {
@@ -40,7 +38,9 @@ class Home extends React.Component {
         </div>
       );
       // Lunch Filter
-    } else if(this.state.selected === 'Lunch') {
+    }
+    
+    if(this.state.selected === 'Lunch') {
       const lunch = this.props.recipes.filter(recipe => recipe.lunch === true);
 
       return (
@@ -56,7 +56,9 @@ class Home extends React.Component {
         </div>
       );
       // Dinner Filter
-    } else if(this.state.selected === 'Dinner') {
+    }
+    
+    if(this.state.selected === 'Dinner') {
       const dinner = this.props.recipes.filter(recipe => recipe.dinner === true);
 
       return (
@@ -72,7 +74,9 @@ class Home extends React.Component {
         </div>
       ); 
       // Dessert Filter
-    } else if (this.state.selected === 'Dessert') {
+    } 
+    
+    if (this.state.selected === 'Dessert') {
       const dessert = this.props.recipes.filter(recipe => recipe.dessert === true);
 
       return (
@@ -87,7 +91,9 @@ class Home extends React.Component {
           </div>
         </div>
       ); 
-    } else if (this.state.selected === 'Snack') {
+    } 
+    
+    if (this.state.selected === 'Snack') {
       const snack = this.props.recipes.filter(recipe => recipe.snack === true);
       return (
         <div className='home-wrapper container'>

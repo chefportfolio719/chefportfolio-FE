@@ -76,7 +76,7 @@ img {
 .recipe-card-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 /********** Cards **********/
@@ -89,7 +89,7 @@ img {
 
 .cards img {
   width: 100%;
-  height: 70%;
+  height: 60%;
   object-fit: cover;
 }
 
@@ -98,7 +98,7 @@ img {
 }
 
 .card-info {
-  height: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -147,4 +147,28 @@ img {
   padding: 20px;
   text-align: center;
   background: #FFFDD6;
+  margin-bottom: 100px;
+}
+
+.chef-recipes {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+/********** Chef Portfolio **********/
+
+.chef-portfolio h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.chef-portfolio .username {
+  text-align: center;
+}
+
+.chef-portfolio .chef-recipes {
+  margin-top: 100px;
 }

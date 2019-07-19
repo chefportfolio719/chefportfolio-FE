@@ -6,13 +6,16 @@ const Recipe = props => {
     <div className='cards'>
       <Link to={`/recipe/${props._id}`}>
         <img src={props.picture} alt={props.name} />
-
-        <div className='card-info'>
-          <p className='username'>Chef Name</p>
-          <h2 className='title'>{props.name}</h2>
-          <p className='description'>{props.description}</p>
-        </div>
       </Link>
+        <div className='card-info'>
+      <Link to={`/chef/${props.chef._id}`}>
+        <p className='username'>{`${props.chef.firstname} ${props.chef.lastname}`}</p>
+      </Link>
+      <Link to={`/recipe/${props._id}`}>
+        <h2 className='title'>{props.name}</h2>
+      </Link>
+          <p className='description'>{props.description.slice(0, 80)}...</p>
+        </div>
     </div>
   );
 };

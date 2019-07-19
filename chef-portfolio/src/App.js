@@ -8,6 +8,7 @@ import Login from './components/Login';
 import SignUP from './components/SignUp';
 import Recipe from './components/Recipe';
 import './App.css';
+import ChefPortfolio from './components/ChefPortfolio';
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
       <Route path='/recipe/:id' component={Recipe}></Route>
       <Route path='/login' component={Login}></Route>
       <Route path='/signup' component={SignUP}></Route>
+      <Route path='/chef/:id' component={ChefPortfolio}></Route>
     </Router>
     );
   }
