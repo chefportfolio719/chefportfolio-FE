@@ -11,12 +11,16 @@ import {
     RegisterP,
     LinkDiv
 } from './Styles'; // Styled components
+import Moment from './Moment';
 
 
 class Login extends Component {
     state = {
-            username: '',
+            firstname: '',
             password: '',
+            lastname: '',
+            email: '',
+            location: '',
     }
 
     handleChange = e => {
@@ -34,16 +38,39 @@ class Login extends Component {
         return (
             <>
             <RegisterDiv>
+                <Moment /> 
                 <Registerh3>Chef Portfolio</Registerh3>
                 <RegisterP>Please Log in</RegisterP>
                 <RegisterForm>
                     <RegisterInput
                         type='text'
-                        name='username'
-                        placeholder='Username'
-                        value={this.state.username}
+                        name='firstname'
+                        placeholder='firstname'
+                        value={this.state.firstname}
                         onChange={this.handleChange}
                     />
+                      <RegisterInput
+                        type='text'
+                        name='lastname'
+                        placeholder='lastname'
+                        value={this.state.lastname}
+                        onChange={this.handleChange}
+                    />
+                      <RegisterInput
+                        type='text'
+                        name='email'
+                        placeholder='email'
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                    />
+                        <RegisterInput
+                        type='text'
+                        name='location'
+                        placeholder='location'
+                        value={this.state.location}
+                        onChange={this.handleChange}
+                    />
+                    
 
                     <RegisterInput
                         type='password'
@@ -67,7 +94,7 @@ class Login extends Component {
                 style={{ textDecoration: 'none', 
                 color: '#444444' }}>
                 Need to Register?
-                </Link> {/* takes you to SignUp page */}
+                </Link> {/* takes you to Register page */}
             </LinkDiv>
             </>
         )

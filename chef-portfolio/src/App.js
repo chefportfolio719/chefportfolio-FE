@@ -8,11 +8,12 @@ import Register from './Components/Register';
 
 
 
-// import { Container} from 'reactstrap';
+ import { Container} from 'reactstrap';
 
 class App extends Component {
   state = {
     isLoggedIn: false
+
   }
 
   componentDidMount() {
@@ -29,18 +30,19 @@ class App extends Component {
 
   render() {
     return (
-      
       <div className="App">
+      <Container/>
       
+       
       <Switch>
+        
     
         <Route path='/login' render={() => 
-        (this.state.isLoggedIn === true ? (<Redirect to='/' />) : ( <Login />))} /> 
+        (this.state.isLoggedIn === true ? (<Redirect to='/' />) : ( <Login />))} />  {/**Ternary function, should direct chef to dashboard if registered and login credentials are correct */}
 
       
 
         {/* This is the component that holds login/signup */}
-
         <Route exact path='/' render={() => 
         (!this.state.isLoggedIn ? (<Redirect to='/login' />) : ( <HomePage/> ))} />
 

@@ -11,6 +11,7 @@ import {
     RegisterP,
     LinkDiv
 } from './Styles'; // Styled components
+import Moment from './Moment';
 
 class Register extends Component {
     constructor(){
@@ -45,6 +46,7 @@ class Register extends Component {
         return(
             <>
             <RegisterDiv>
+                <Moment/>
                 <Registerh3>Chef Portfolio</Registerh3>
                 <RegisterP>Register to view chef recipes</RegisterP>
                 <RegisterForm>

@@ -43,12 +43,12 @@ export const loginUser = user => dispatch => {
         type: LOGIN_USER_BEGIN
     })
     axios
-    .post('https://chefportfoliofinal.herokuapp.com/login/', user)
+    .post('https://chefportfoliofinal.herokuapp.com/chefs/login', user)
     .then(res => { 
         console.log(res.data)
         sessionStorage.setItem('jwt', res.data.token);
         sessionStorage.setItem('isLoggedIn', true)
-        localStorage.setItem('username', user.username);
+        localStorage.setItem('firstname', user.firstname);
         
         window.location.reload();
         dispatch({
@@ -68,7 +68,7 @@ export const logoutUser = user => dispatch => {
         type: LOGOUT_USER_BEGIN
     })
     axios
-        .get('https://chefportfoliofinal.herokuapp.com/users')
+        .get('https://chefportfoliofinal.herokuapp.com/chefs')
         .then(res => {
             sessionStorage.removeItem('isLoggedIn', false)
             sessionStorage.removeItem('jwt')
