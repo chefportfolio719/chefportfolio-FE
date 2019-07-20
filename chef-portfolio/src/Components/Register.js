@@ -57,7 +57,7 @@ class Register extends Component {
                     />
                        <RegisterInput
                         type='text'
-                        name='lasstname'
+                        name='lastname'
                         placeholder='lastname'
                         value={this.state.lastname}
                         onChange={this.handleChange}

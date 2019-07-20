@@ -18,7 +18,7 @@ export const LOGOUT_USER_ERROR = 'LOGOUT_USER_ERROR'
 export const registerUser = user => dispatch => {
     dispatch({ type: REGISTER_USER_BEGIN });
     axios
-    .post('https://chefportfoliofinal.herokuapp.com/register/', user)
+    .post('https://chefportfoliofinal.herokuapp.com/chefs/register', user)
     .then(res => {
         sessionStorage.setItem('isSignedUp', true)
          window.location.reload();
