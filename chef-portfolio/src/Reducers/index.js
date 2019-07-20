@@ -14,7 +14,7 @@ import {
 
 // Initial state for store
 const initialState = {
-    users: [],
+    chefs: [],
     userId: null,
     isSigningUp: false,
     isLoggingIn: false,
@@ -25,7 +25,7 @@ const initialState = {
 }
 
 
-// rootreducer for logging in / signin up users
+// rootreducer for logging in / signin up chefs
 export const rootReducer = (state = initialState, action) => {
     switch(action.type) {
         case REGISTER_USER_BEGIN:
@@ -38,7 +38,7 @@ export const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isSigningUp: false,
-                users: action.payload
+                chefs: action.payload
             }
 
         case REGISTER_USER_FAILURE:
@@ -59,7 +59,7 @@ export const rootReducer = (state = initialState, action) => {
                 ...state,
                 isLoggingIn: false,
                 isLoggedIn: true,
-                users: action.payload
+                chefs: action.payload
             }
 
         case LOGIN_USER_FAILURE:
@@ -74,14 +74,14 @@ export const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoggedIn: true,
-                users: action.payload
+                chefs: action.payload
             }
 
         case LOGOUT_USER_SUCCESS:
             return {
                 ...state,
                 isLoggedIn: false,
-                users: action.payload
+                chefs: action.payload
             }
 
         case LOGOUT_USER_ERROR:

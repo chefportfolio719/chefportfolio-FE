@@ -46,7 +46,7 @@ class App extends Component {
         <Route exact path='/' render={() => 
         (!this.state.isLoggedIn ? (<Redirect to='/login' />) : ( <HomePage/> ))} />
 
-        <Route exact path='/' component={HomePage} />
+        <Route exact path='/' component={HomePage} />  {/** This should be replaced with the chef dashboard component */}
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         

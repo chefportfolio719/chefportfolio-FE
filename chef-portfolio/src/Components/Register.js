@@ -109,7 +109,7 @@ class Register extends Component {
 
 const mapStateToProps = state => {
     return{
-        users: [],
+        chefs: [],
         isSigningUp: state.isSigningUp
     } 
 }

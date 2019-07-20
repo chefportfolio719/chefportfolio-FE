@@ -15,10 +15,10 @@ export const LOGOUT_USER_ERROR = 'LOGOUT_USER_ERROR'
 
 
 // logic for signing up a new user
-export const registerUser = user => dispatch => {
+export const registerUser = chef => dispatch => {
     dispatch({ type: REGISTER_USER_BEGIN });
     axios
-    .post('https://chefportfoliofinal.herokuapp.com/chefs/register', user)
+    .post('https://chefportfoliofinal.herokuapp.com/chefs/register', chef)
     .then(res => {
         sessionStorage.setItem('isSignedUp', true)
          window.location.reload();
@@ -37,18 +37,18 @@ export const registerUser = user => dispatch => {
 
 
 // logic for logging in the user
-export const loginUser = user => dispatch => {
+export const loginUser = chef => dispatch => {
     console.log()
     dispatch({
         type: LOGIN_USER_BEGIN
     })
     axios
-    .post('https://chefportfoliofinal.herokuapp.com/chefs/login', user)
+    .post('https://chefportfoliofinal.herokuapp.com/chefs/login', chef)
     .then(res => { 
         console.log(res.data)
         sessionStorage.setItem('jwt', res.data.token);
         sessionStorage.setItem('isLoggedIn', true)
-        localStorage.setItem('firstname', user.firstname);
+        localStorage.setItem('firstname', chef.firstname);
         
         window.location.reload();
         dispatch({

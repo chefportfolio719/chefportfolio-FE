@@ -37,7 +37,7 @@ const RegisterInput = styled.input`
 
 const RegisterButton = styled.button`
     margin: 20px 0 20px;
-    background-color: #3b5998;
+    background-color: #ff7600;
     padding: 10px;
     color: white;
     font-weight: bold;
@@ -47,7 +47,7 @@ const RegisterButton = styled.button`
     cursor: pointer;
 
     &:hover {
-        background-color: #6699cc;
+        background-color: #0c0034;
     }
 `
 
