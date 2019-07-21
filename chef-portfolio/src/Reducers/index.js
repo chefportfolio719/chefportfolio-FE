@@ -7,33 +7,37 @@ import {
     LOGIN_USER_FAILURE,
     LOGOUT_USER_BEGIN,
     LOGOUT_USER_SUCCESS,
-    LOGOUT_USER_ERROR
-  
-  } from '../Actions';
+    LOGOUT_USER_ERROR,
+    FETCHING,
+    GET_CHEF,
+    ERROR
+
+} from '../Actions';
 
 
 // Initial state for store
 const initialState = {
     chefs: [],
-    userId: null,
+    chef_id: null,
     isSigningUp: false,
     isLoggingIn: false,
     error: null,
-    
-    
-    
+    fetchingChefs: false, 
+
+
+
 }
 
 
 // rootreducer for logging in / signin up chefs
 export const rootReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case REGISTER_USER_BEGIN:
             return {
                 ...state,
                 isSigningUp: true
             }
-        
+
         case REGISTER_USER_SUCCESS:
             return {
                 ...state,
@@ -91,7 +95,14 @@ export const rootReducer = (state = initialState, action) => {
                 error: action.payload
             }
 
-            default:
-                return state;
-        }
+        case FETCHING:
+            return Object.assign({}, state, { fetchingChefs: true })
+        case GET_CHEF:
+            return Object.assign({}, state, { fetchingChefs: false, error: '', chefs: action.chefs })
+        case ERROR:
+            return Object.assign({}, state, { fetchingChefs: false, error: action.error })
+
+        default:
+            return state;
     }
+}

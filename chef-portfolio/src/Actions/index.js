@@ -9,12 +9,15 @@ export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE'
 export const LOGOUT_USER_BEGIN = 'LOGOUT_USER_BEGIN'
 export const LOGOUT_USER_SUCCESS = 'LOGOUT_USER_SUCCESS'
 export const LOGOUT_USER_ERROR = 'LOGOUT_USER_ERROR'
+export const GET_CHEF = 'GET_CHEF'
+export const FETCHING = 'FETCHING'
+export const ERROR = 'ERROR'
 
 
 
 
 
-// logic for signing up a new user
+// logic for registering new chef 
 export const registerUser = chef => dispatch => {
     dispatch({ type: REGISTER_USER_BEGIN });
     axios
@@ -36,7 +39,7 @@ export const registerUser = chef => dispatch => {
 }
 
 
-// logic for logging in the user
+// logic for logging in chef
 export const loginUser = chef => dispatch => {
     console.log()
     dispatch({
@@ -62,7 +65,7 @@ export const loginUser = chef => dispatch => {
     }))
 }
 
-// logic for logging out user
+// logic for logging out chef 
 export const logoutUser = user => dispatch => {
     dispatch({
         type: LOGOUT_USER_BEGIN
@@ -85,3 +88,34 @@ export const logoutUser = user => dispatch => {
                 payload: err
             }));
 }
+
+
+// Logid for getting one chef 
+
+export const getChef = () => {
+    return (dispatch) => {
+      dispatch({type: FETCHING});
+      axios
+        .get(`https://chefportfoliopt4.herokuapp.com/chefs/:_id`)
+        .then(response => {
+          dispatch({type: GET_CHEF, chefs: response.data})
+        })
+        .catch(error => {
+          dispatch({type: ERROR, error: 'Sorry having some issues loading Chef, try again!'})
+        });
+    }
+  }
+
+  export const deleteChef = (_id) => {
+    return(dispatch) => {
+      dispatch({type: FETCHING});
+      axios
+        .delete(` https://chefportfoliopt4.herokuapp.com/chefs/${_id}`)
+        .then(response => {
+          dispatch({type: GET_CHEF, chefs: response.data})
+        })
+        .catch(err => {
+          dispatch({type: ERROR, error: `Sorry! We could not delete the Chef!`})
+        });  
+    }
+  }
