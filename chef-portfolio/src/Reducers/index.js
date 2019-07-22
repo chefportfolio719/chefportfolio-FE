@@ -10,7 +10,7 @@ import {
     LOGOUT_USER_ERROR,
     FETCHING,
     GET_CHEF,
-    ERROR
+    ERROR,
 
 } from '../Actions';
 

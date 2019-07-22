@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getChef } from '../actions/index.js'
+import { getChef } from '../Actions/index'
 import Chef from './Chef.js';
 
 
@@ -12,9 +12,9 @@ class ChefList extends Component {
     render() {
     return (
         <div>
-            {this.props.fetchingChefs ? <h1>Loading Cheff...</h1> : null}
+            {this.props.fetchingChefs ? <h1>Loading Chef...</h1> : null}
             {this.props.error !== '' ? <h1>{this.props.error}</h1> : null}
-            {this.props.smurfs.map(smurf => <Chef smurf={smurf} key={Math.random()}/>)}
+            {this.props.chefs.map(chef => <Chef chef={chef} key={Math.random()}/>)}
         </div>
     );
     }

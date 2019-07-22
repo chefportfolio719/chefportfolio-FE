@@ -3,12 +3,13 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.css';
 import Login from './Components/Login';
-import HomePage from './Components/HomePage';
+
 import Register from './Components/Register';
 
 
 
  import { Container} from 'reactstrap';
+import Chef from './Components/Chef';
 
 class App extends Component {
   state = {
@@ -44,9 +45,9 @@ class App extends Component {
 
         {/* This is the component that holds login/signup */}
         <Route exact path='/' render={() => 
-        (!this.state.isLoggedIn ? (<Redirect to='/login' />) : ( <HomePage/> ))} />
+        (!this.state.isLoggedIn ? (<Redirect to='/login' />) : ( <Chef/> ))} />
 
-        <Route exact path='/' component={HomePage} />  {/** This should be replaced with the chef dashboard component */}
+        <Route exact path='/' component={Chef} />  {/** This should be replaced with the chef dashboard component */}
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         

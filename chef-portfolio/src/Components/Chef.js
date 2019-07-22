@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteChef } from '../Actions/index'
+import ChefList from './ChefList'
 
 const Chef = props => {
     const deleteClickHandler = (e) => {
@@ -10,8 +11,8 @@ const Chef = props => {
 
     return (
         <div>
-            <p>{props.chefs_id} </p>
-            
+            <p>{props.chef} </p>
+            <h3><ChefList/></h3>
             <button onClick={deleteClickHandler}>Delete Chef!</button>
         </div>
     )

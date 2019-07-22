@@ -100,7 +100,7 @@ export const getChef = () => {
         .then(response => {
           dispatch({type: GET_CHEF, chefs: response.data})
         })
-        .catch(error => {
+        .catch(ERROR => {
           dispatch({type: ERROR, error: 'Sorry having some issues loading Chef, try again!'})
         });
     }
