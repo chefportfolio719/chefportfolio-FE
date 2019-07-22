@@ -20,16 +20,19 @@ img {
 
 /********** Container **********/
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 5%;
 }
 
 /********** Main Nav **********/
 .main-nav {
   padding: 10px 0;
+  width: 100%;
   color: white;
   background: #0C0034;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -157,7 +160,6 @@ img {
 }
 
 /********** Chef Portfolio **********/
-
 .chef-portfolio h1 {
   text-align: center;
   font-size: 5rem;
@@ -171,4 +173,47 @@ img {
 
 .chef-portfolio .chef-recipes {
   margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+/********** Chef Portfolio **********/
+@media(max-width: 1200px) {
+  .container {
+    padding: 5%;
+  }
+}
+
+@media(max-width: 800px) {
+  .container {
+    padding: 5%;
+  }
+
+  .cards {
+    width: 45%;
+  }
+
+  .recipe-wrapper .ingredients,
+  .recipe-wrapper .instructions {
+    width: 100%;
+  }
+}
+
+@media(max-width: 500px) {
+  .cards {
+    width: 100%;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .main-nav h1 {
+    margin-bottom: 30px;
+  }
+
+  .recipe-wrapper .ingredients,
+  .recipe-wrapper .instructions {
+    width: 100%;
+  }
 }

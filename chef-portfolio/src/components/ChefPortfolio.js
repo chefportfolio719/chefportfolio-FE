@@ -16,6 +16,7 @@ class ChefPortfolio extends React.Component {
       const firstName = chefRecipes[0].chef.firstname;
       const lastName = chefRecipes[0].chef.lastname;
       const location = chefRecipes[0].chef.location;
+      
       return (
         <div className='chef-portfolio'>
           <h1 >{`${firstName} ${lastName}`}</h1>
