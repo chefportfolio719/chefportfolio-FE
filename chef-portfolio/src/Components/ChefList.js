@@ -12,6 +12,9 @@ class ChefList extends Component {
     render() {
     return (
         <div>
+            <p>{this.props.chefs.email}</p>
+
+
             {this.props.fetchingChefs ? <h1>Loading Chef...</h1> : null}
             {this.props.error !== '' ? <h1>{this.props.error}</h1> : null}
             {this.props.chefs.map(chef => <Chef chef={chef} key={Math.random()}/>)}

@@ -12,6 +12,12 @@ export const LOGOUT_USER_ERROR = 'LOGOUT_USER_ERROR'
 export const GET_CHEF = 'GET_CHEF'
 export const FETCHING = 'FETCHING'
 export const ERROR = 'ERROR'
+export const GET_ALL_RECIPES_BEGIN = 'GET_ALL_RECIPES_BEGIN'
+export const GET_ALL_RECIPES_SUCCESS = 'GET_ALL_RECIPES_SUCCESS'
+export const GET_ALL_RECIPES_FAIL = 'GET_ALL_RECIPES_FAIL'
+export const DELETE_RECIPE_SUCCESS = 'DELETE_RECIPE_SUCCESS'
+export const DELETE_RECIPE = 'DELETE_RECIPE'
+export const DELETE_RECIPE_ERROR = 'DELETE_RECIPE_ERROR'
 
 
 
@@ -92,11 +98,11 @@ export const logoutUser = user => dispatch => {
 
 // Logid for getting one chef 
 
-export const getChef = () => {
+export const getChef = (_id) => {
     return (dispatch) => {
       dispatch({type: FETCHING});
       axios
-        .get(`https://chefportfoliopt4.herokuapp.com/chefs/:_id`)
+        .get(`https://chefportfoliofinal.herokuapp.com/chefs`)
         .then(response => {
           dispatch({type: GET_CHEF, chefs: response.data})
         })
@@ -119,3 +125,37 @@ export const getChef = () => {
         });  
     }
   }
+
+   // Logic for getting all recipes
+
+ export const getAll = () => dispatch => {
+    dispatch({type: GET_ALL_RECIPES_BEGIN});
+    axios
+    .get('https://chefportfoliofinal.herokuapp.com/recipes')
+    .then(res => {
+       dispatch({type: GET_ALL_RECIPES_SUCCESS,
+                 payload: res.data})
+    })
+    .catch(err => {
+        dispatch({tpye: GET_ALL_RECIPES_FAIL, error: "Sorry having trouble loading recipes"})
+    })
+
+ }
+
+ // Logic for deleting recipe
+
+export const deleteRecipe = (id) => {
+    return(dispatch) => {
+        dispatch({type: DELETE_RECIPE});
+        axios
+        .delete(`https://chefportfoliofinal.herokuapp.com/chefs/:_id`)
+        .then(res => {
+            dispatch({type: DELETE_RECIPE_SUCCESS})
+        })
+        .catch(err => {
+            dispatch({type: DELETE_RECIPE_ERROR , error: "Sorry! Could not delete recipe.."})
+        });
+        
+    }
+
+}

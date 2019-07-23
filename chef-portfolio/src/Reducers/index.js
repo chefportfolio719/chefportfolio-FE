@@ -8,6 +8,9 @@ import {
     LOGOUT_USER_BEGIN,
     LOGOUT_USER_SUCCESS,
     LOGOUT_USER_ERROR,
+    GET_ALL_RECIPES_BEGIN,
+    GET_ALL_RECIPES_SUCCESS,
+    GET_ALL_RECIPES_FAIL,
     FETCHING,
     GET_CHEF,
     ERROR,
@@ -23,6 +26,9 @@ const initialState = {
     isLoggingIn: false,
     error: null,
     fetchingChefs: false, 
+    getALL: false, 
+    deletingRecipe: false,
+    recipes: [],
 
 
 
@@ -94,6 +100,24 @@ export const rootReducer = (state = initialState, action) => {
                 isLoggedIn: true,
                 error: action.payload
             }
+            case GET_ALL_RECIPES_BEGIN:
+                    return {
+                        ...state,
+                        isLoggedIn: false,
+                        isRegistered: false
+                    }
+                case GET_ALL_RECIPES_SUCCESS:
+                    return {
+                        ...state,
+                        getALL: true,
+                        recipes: action.payload
+    
+                    }
+                case GET_ALL_RECIPES_FAIL:
+                    return {
+                        ...state,
+                        error: action.payload
+                    }
 
         case FETCHING:
             return Object.assign({}, state, { fetchingChefs: true })
