@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {getAll} from '../actions/index';
+import {getAll} from '../Actions/index';
 import Recipe from '../Components/Recipe';
 
 

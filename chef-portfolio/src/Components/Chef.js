@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteChef } from '../Actions/index'
 import ChefList from './ChefList'
-import Recipe from './Recipe';
+import RecipeList from './RecipeList';
+
 
 const Chef = props => {
     
@@ -15,7 +16,7 @@ const Chef = props => {
         <div>
             <p>{props.chef_id}</p>
             <h3><ChefList/></h3>
-            <h4><Recipe/></h4>
+            <h4><RecipeList/></h4>
             <button onClick={deleteClickHandler}>Delete Chef!</button>
         </div>
     )

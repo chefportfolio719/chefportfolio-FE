@@ -18,12 +18,12 @@ const Recipe = ({recipe}) =>{
     {recipe && 
 
 <div className="recipe_div">
-     <p> {recipe.chef}{recipe.name}</p>
-     <h1>{recipe.mealtype}</h1>
-     <RecipeIngredients ingredients = {recipe.ingredients} />
-     <h3>{recipe.instructions}</h3>
-     <h4>{recipe.picture}</h4>
-     <h5>{recipe.description}</h5>
+    
+     <p> {recipe.name}</p>
+     <h1>{recipe.description}</h1>
+  
+
+    
      
      
 
